@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <caption>员工列表</caption>
+    <tr>
+        <th>id</th>
+        <th>姓名</th>
+        <th>工资</th>
+        <th>工作</th>
+        <th>操作</th>
+    </tr>
+    <!--遍历vue对象中的数组变量-->
+    <tr v-for="emp in arr">
+        <td>{{emp.id}}</td>
+        <!--:href让vue变量和href属性绑定  -->
+        <td><a :href="'/update.html?id='+emp.id">{{emp.name}}</a></td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.job}}</td>
+        <!--给删除超链接添加点击事件, 把员工id传递过去-->
+        <td><a href="#" @click="del(emp.id)">删除</a></td>
+    </tr>
+</table>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "table",
+        data: {
+            arr: []
+        },
+        created: function () {//此方法当vue对象创建完之后执行
+            //发请求获取页面中的数据
+            axios.get("/select").then(function (response) {
+                //response.data得到的内容是axios框架将json字符串转成的数组
+                //把得到的数组给到vue对象中的数组变量,页面会自动发生改变
+                vm.arr = response.data;
+                console.log(vm.arr)
+            }).catch(function (err) {
+                alert(err);
+            })
+        },
+        methods: {
+            del: function (id) {
+                if (!confirm("您确认删除这个员工吗?")) {
+                    return;//点击取消 则 结束当前方法
+                }
+                //发出异步请求
+                axios.get("/delete?id=" + id).then(function (response) {
+                    alert("删除完成!")
+                    location.reload();//刷新页面
+                }).catch(function (err) {
+                    alert(err);
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

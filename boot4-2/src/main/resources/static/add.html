@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>添加员工页面</h3>
+<form action="#">
+    <input type="text" name="name" placeholder="员工姓名">
+    <input type="text" name="salary" placeholder="工资">
+    <input type="text" name="job" placeholder="工作">
+    <input type="button" value="添加" @click="add()">
+</form>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el:"form",
+        data:{},
+        methods:{
+            add:function () {
+                //得到表单数据
+                let data = new FormData(document.querySelector("form"));
+                //发出异步请求 如果发请求需要用到form表单中的数据 则建议使用post请求
+                axios.post("/add",data).then(function (response) {
+                    alert("添加完成!");
+                    //添加完成后 浏览器显示首页 类似重定向到首页
+                    location.href="/index.html";
+                }).catch(function (err) {
+                    alert(err);
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>修改员工页面</h3>
+<form action="#">
+    <!--v-model绑定的是文本框的value值-->
+    <input type="text" v-model="emp.id" name="id" readonly="readonly">
+    <input type="text" v-model="emp.name" name="name" placeholder="员工姓名">
+    <input type="text" v-model="emp.salary" name="salary" placeholder="工资">
+    <input type="text" v-model="emp.job" name="job" placeholder="工作">
+    <input type="button" value="修改" @click="updatefn()">
+</form>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el:"form",
+        data:{
+            emp:{} //{}代表是一个对象
+        },
+        methods:{
+            updatefn:function () {
+                //得到form表单中的数据
+                let data = new FormData(document.querySelector("form"));
+                //发出异步请求
+                axios.post("/update",data).then(function (response) {
+                    alert("修改成功!");
+                    //回到列表页面
+                    location.href="/list.html";
+                    //history.back();//相当于点击浏览器中的返回按钮
+
+                }).catch(function (err) {
+                    alert(err);
+                })
+            }
+        },
+        created:function () {
+            //得到员工id
+            let id = location.search.split("=")[1];
+            //发请求 查询员工详情
+            axios.get("/selectbyid?id="+id).then(function (response) {
+                //服务器返回的是表示员工的json字符串,axios框架会把json转成员工对象
+                vm.emp = response.data;
+            }).catch(function (err) {
+                alert(err);
+            })
+        }
+    })
+</script>
+</body>
+</html>
