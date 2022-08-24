@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>微博首页</h1>
+<header>
+    <div v-if="!isLogin">
+        <a href="/reg.html">注册</a>
+        <a href="/login.html">登录</a>
+    </div>
+    <!--v-if满足条件时元素才会显示 否则隐藏-->
+    <div v-if="isLogin">
+        <a href="/send.html">发布微博</a>
+        <a href="#" @click="logout()">退出登录</a>
+    </div>
+    <hr>
+</header>
+<section>
+    <!--遍历展示微博数据-->
+    <div v-for="weibo in arr">
+        <h3>{{weibo.author}}说:{{weibo.content}}</h3>
+        <img :src="weibo.url" width="200" alt="">
+    </div>
+</section>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let header_vm = new Vue({
+        el:"header",
+        data:{
+            isLogin:false
+        },
+        created:function () {
+            //发请求询问是否登录过
+            axios.get("/checklogin").then(function (response) {
+                //服务器返回true或false
+                header_vm.isLogin=response.data;
+            })
+        },
+        methods:{
+            logout:function () {
+                if (!confirm("您确认退出登录吗?")){
+                    return;
+                }
+                //发出退出登录请求
+                axios.get("/logout").then(function (response) {
+                    location.reload();//刷新页面
+                })
+            }
+        }
+    })
+    //创建负责处理section标签显示的vue对象 一个复杂页面可能有多个vue对象
+    let section_vm = new Vue({
+        el:"section",
+        data:{
+            arr:[]
+        },
+        created:function () {
+            //发请求得到所有微博数据
+            axios.get("/selectweibo").then(function (response) {
+                section_vm.arr = response.data;
+            })
+        }
+
+    })
+</script>
+</body>
+</html>
