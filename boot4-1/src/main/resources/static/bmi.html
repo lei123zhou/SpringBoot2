@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>测试身体指数BMI</h3>
+<form action="#">
+    <input type="text" name="h" placeholder="请输入身高(米)">
+    <input type="text" name="w" placeholder="请输入体重(千克)">
+    <!--@click是Vue中给元素添加事件的方式 -->
+    <input type="button" value="开始测试" @click="bmi()">
+    <h1>{{msg}}</h1>
+</form>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el:"form",
+        data:{
+            msg:"测试结果:无"
+        },
+        methods:{
+            bmi:function () {
+                //得到form表单中的数据
+                let data = new FormData(document.querySelector("form"));
+                //发出异步请求
+                axios.post("/bmi",data).then(function (response) {
+                    //把服务器返回的数据显示到页面h1标签里面
+                    vm.msg="测试结果:"+response.data;
+                }).catch(function (err) {
+                    alert(err);
+                });
+            }
+        }
+    })
+</script>
+</body>
+</html>

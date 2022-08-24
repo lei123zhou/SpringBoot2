@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>注册页面</h3>
+<!--#代表不发出请求 仍然在当前页面-->
+<form action="#">
+    <input type="text" name="username" onblur="checkfn()" placeholder="用户名"><br>
+    <input type="text" name="password" placeholder="密码"><br>
+    <input type="submit" value="注册">
+</form>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    function checkfn() {
+        //创建表单数据对象(里面装着表单里面所有控件的数据)
+        let data = new FormData(document.querySelector("form"));
+        //发出异步请求,因为要实现的效果为局部刷新,同步请求实现不了
+        //请求成功时执行then里面的方法,请求异常时执行catch里面的方法
+        axios.post("/check",data).then(function (response) {
+            // response代表响应对象  response.data是服务器返回的数据
+
+            alert(response.data);
+        }).catch(function (err) {
+            alert(err);//err错误对象
+        });
+    }
+</script>
+</body>
+</html>
