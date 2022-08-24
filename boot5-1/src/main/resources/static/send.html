@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>上传文件</h3>
+<!--设置编码类型:多部分数据,表单中包含文件数据和控件数据-->
+<form action="#" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="button" value="开始上传" @click="send()">
+</form>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+<script>
+    let vm = new Vue({
+        el:"form",
+        data:{},
+        methods:{
+            send:function () {
+                //得到表单中的数据
+                let data = new FormData(document.querySelector("form"));
+                axios.post("/send",data).then(function (response) {
+                    alert("上传完成!");
+                }).catch(function (err) {
+                    alert(err);
+                })
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

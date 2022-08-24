@@ -2,7 +2,6 @@ package cn.tedu.boot42.controller;
 
 import cn.tedu.boot42.entity.Emp;
 import cn.tedu.boot42.mapper.EmpMapper;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +10,7 @@ import java.util.List;
 
 @RestController
 public class EmpController {
-    @Autowired
+    @Autowired(required = false)
     EmpMapper empMapper;
 
     @RequestMapping("/add")

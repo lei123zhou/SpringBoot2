@@ -4,19 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="736b7946-ccca-4700-a6a4-e8cf3d3b5460" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/java/cn/tedu/boot42/controller/EmpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/java/cn/tedu/boot42/entity/Emp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/java/cn/tedu/boot42/mapper/EmpMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/resources/static/add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/resources/static/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot4-2/src/main/resources/static/update.html" afterDir="false" />
+    <list default="true" id="736b7946-ccca-4700-a6a4-e8cf3d3b5460" name="变更" comment="前后端分离">
+      <change afterPath="$PROJECT_DIR$/boot5-2/src/main/java/cn/tedu/boot52/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-2/src/main/java/cn/tedu/boot52/controller/WeiboController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-2/src/main/java/cn/tedu/boot52/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-2/src/main/java/cn/tedu/boot52/mapper/WeiboMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_22.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_22.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_8_23_0023_21_52____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2022_8_23_0023_21_52____.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_8_24_0024_19_10____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2022_8_24_0024_19_10____.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot4-2/src/main/java/cn/tedu/boot42/controller/EmpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot4-2/src/main/java/cn/tedu/boot42/controller/EmpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot5-2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/boot5-2/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
         <option value="Interface" />
       </list>
@@ -33,6 +43,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="2Di9eaxCfXfA6LRAoWEmkjbgnGB" />
   <component name="ProjectLevelVcsManager">
@@ -44,6 +58,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -55,21 +70,22 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/boot4-2/src/main/resources/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/boot5-2/src/main/resources/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\java\SpringBoot2\boot5-2\src\main\resources\static" />
+      <recent name="E:\code\java\SpringBoot2\boot5-1\src\main\resources\static" />
       <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot4-2\src\main\resources\static" />
       <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot4-1\src\main\resources\static" />
       <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot3-4\src\main\resources\static" />
-      <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot3-3\src\main\resources\static" />
-      <recent name="E:\code\java\SpringBoot2\boot2-4" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.tedu.springboot.entity" />
@@ -86,20 +102,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Boot42Application">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Boot52Application">
     <configuration name="Boot32ApplicationTests.insertItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="boot3-2" />
       <extension name="coverage">
@@ -192,6 +195,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Boot24Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boot2-2 (3)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.tedu.boot24.Boot24Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Boot31Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="boot3-1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.tedu.boot31.Boot31Application" />
@@ -234,6 +244,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Boot51Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boot5-1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.tedu.boot51.Boot51Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Boot52Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boot5-2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.tedu.boot52.Boot52Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Boot32ApplicationTests.selectItem" />
@@ -257,6 +281,8 @@
       <workItem from="1661222981042" duration="4038000" />
       <workItem from="1661231753163" duration="12308000" />
       <workItem from="1661302759322" duration="18554000" />
+      <workItem from="1661389373775" duration="9235000" />
+      <workItem from="1661405472855" duration="5931000" />
     </task>
     <task id="LOCAL-00001" summary="变更">
       <created>1661246788276</created>
