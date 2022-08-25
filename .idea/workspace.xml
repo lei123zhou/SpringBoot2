@@ -4,41 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="736b7946-ccca-4700-a6a4-e8cf3d3b5460" name="变更" comment="weibo">
-      <change afterPath="$PROJECT_DIR$/boot5-3/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/Boot53Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/controller/WeiboController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/entity/Weibo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/java/cn/tedu/boot53/mapper/WeiboMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/resources/static/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/resources/static/reg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/main/resources/static/send.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot5-3/src/test/java/cn/tedu/boot53/Boot53ApplicationTests.java" afterDir="false" />
+    <list default="true" id="736b7946-ccca-4700-a6a4-e8cf3d3b5460" name="变更" comment="修改了pom文件问题">
+      <change afterPath="$PROJECT_DIR$/boot5-4/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/Boot54Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/controller/WeiboController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/entity/Weibo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54/mapper/WeiboMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/resources/static/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/resources/static/reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/main/resources/static/send.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boot5-4/src/test/java/cn/tedu/boot54/Boot54ApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_2_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_2_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_22.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_8_25_8_44____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2022_8_25_8_44____.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot5-2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/boot5-2/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +78,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/boot5-3/src/main/resources/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/boot5-4/src/main/java/cn/tedu/boot54" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,11 +89,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\java\SpringBoot2\boot5-4\src\main\java\cn\tedu\boot54" />
+      <recent name="E:\code\java\SpringBoot2\boot5-4\src\main\resources\static" />
       <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot5-3\src\main\resources\static" />
       <recent name="E:\code\java\SpringBoot2\boot5-2\src\main\resources\static" />
       <recent name="E:\code\java\SpringBoot2\boot5-1\src\main\resources\static" />
-      <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot4-2\src\main\resources\static" />
-      <recent name="C:\Users\zl\Desktop\git\SpringBoot2\boot4-1\src\main\resources\static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.tedu.springboot.entity" />
@@ -119,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Boot52Application">
+  <component name="RunManager" selected="Spring Boot.Boot54Application">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -293,6 +284,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Boot54Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boot5-4" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.tedu.boot54.Boot54Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Boot32ApplicationTests.selectItem" />
@@ -319,6 +317,7 @@
       <workItem from="1661389373775" duration="9235000" />
       <workItem from="1661405472855" duration="6021000" />
       <workItem from="1661413151920" duration="5624000" />
+      <workItem from="1661430921369" duration="4920000" />
     </task>
     <task id="LOCAL-00001" summary="变更">
       <created>1661246788276</created>

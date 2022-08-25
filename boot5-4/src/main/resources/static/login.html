@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>登录页面</h3>
+<form action="#">
+    <input type="text" name="username" placeholder="用户名">
+    <input type="password" name="password" placeholder="密码">
+    <input type="button" value="登录" @click="login()">
+</form>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el:"form",
+        data:{},
+        methods:{
+            login:function () {
+               //得到表单中的数据
+               let data = new FormData(document.querySelector("form"));
+               //发出登录请求
+                axios.post("/login",data).then(function (response) {
+                    if (response.data==1){
+                        alert("登录成功!");
+                        location.href="/index.html";//回到首页
+                    }else if(response.data==2){
+                        alert("用户名不存在!");
+                    }else{
+                        alert("密码错误!");
+                    }
+                }).catch(function (err) {
+                    alert(err);
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>
