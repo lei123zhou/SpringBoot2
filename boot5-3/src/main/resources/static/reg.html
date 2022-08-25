@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>注册页面</h3>
+<form action="#">
+    <input type="text" name="username" placeholder="用户名">
+    <input type="text" name="password" placeholder="密码">
+    <input type="text" name="nick" placeholder="昵称">
+    <input type="button" value="注册" @click="reg()">
+</form>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+<script>
+    let vm = new Vue({
+        el:"form",data:{},
+        methods:{
+            reg:function () {
+                let data = new FormData(document.querySelector("form"));
+                //发出注册请求
+                axios.post("/reg",data).then(function (response) {
+                    //如果注册成功 返回1 用户名已存在返回2
+                    if (response.data==1){
+                        alert("注册成功!");
+                        location.href="/login.html";
+                    }else{
+                        alert("用户名已存在!");
+                    }
+                }).catch(function (err) {
+                    alert(err);
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

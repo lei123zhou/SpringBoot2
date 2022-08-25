@@ -11,6 +11,7 @@
         <module name="boot2-2 (1)" />
         <module name="boot3-4" />
         <module name="boot5-2" />
+        <module name="boot5-3" />
         <module name="boot3-2" />
         <module name="boot4-1" />
         <module name="springboot2 (1)" />
@@ -40,6 +41,7 @@
       <module name="boot4-2" target="1.8" />
       <module name="boot5-1" target="1.8" />
       <module name="boot5-2" target="1.8" />
+      <module name="boot5-3" target="1.8" />
       <module name="SpringBoot" target="8" />
       <module name="springboot" target="8" />
       <module name="springboot2" target="8" />
@@ -67,6 +69,7 @@
       <module name="boot4-2" options="-parameters" />
       <module name="boot5-1" options="-parameters" />
       <module name="boot5-2" options="-parameters" />
+      <module name="boot5-3" options="-parameters" />
     </option>
   </component>
 </project>
