@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title>xxx后台管理页面</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            font: 16px "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+            color: #cfcfcf;
+        }
+        header>div>div{
+            height: 50px;
+        }
+        header .col-md-3{
+            background-color: #333;
+        }
+        header .col-md-9{
+            background-color: #2f3638;
+        }
+        .panel-default{
+            background-color: rgba(0,0,0,0);
+            border: 0;
+        }
+        .panel-default>.panel-heading{
+            background-color: rgba(0,0,0,0);
+            color: #eee;
+        }
+        .panel-heading{
+            padding-left: 50px;
+        }
+        #accordion a{
+            color: #cfcfcf;
+        }
+        #accordion a:hover{
+            color: white;
+
+        }
+        [v-cloak]{
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+<header>
+    <div class="row" >
+        <div class="col-md-3">
+            <a href="/index.html">
+                <img style="margin:5px 10px" src="http://www.vrd.net.cn/vrd/images/logo.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-9">
+             <span class="pull-right" style="position: relative;top: 13px;right: 20px">
+                 <span v-cloak>{{user.username}},欢迎你!</span>
+                 <a href="#" @click="logout()">退出登录</a>
+             </span>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="row" >
+        <div class="col-md-3 col-xs-3" style="padding: 50px;background-color: #282d2f;height: 1000px">
+            <div class="panel-group" id="accordion" style="margin-top: 50px">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" >
+                            <a class="fa fa-user-circle-o" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseOne">
+                                分类管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul style="list-style-type: none">
+                                <li><a href="/admin.html">分类列表</a></li>
+                                <li><a href="#" @click="add()">添加分类</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="fa fa-institution" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseTwo">
+                                作品管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul style="list-style-type: none">
+                                <li><a href="/admin-product.html">作品列表</a></li>
+                                <li><a href="/send.html">发布作品</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="fa fa-photo" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseThree">
+                                轮播图管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul style="list-style-type: none">
+                                <li><a href="/admin-banner.html">轮播图列表</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9 col-xs-9" style="background-color: #3a4144;height: 1000px">
+            <h4 class="page-header">欢迎访问VRD后台管理系统</h4>
+
+            <table v-cloak border="1" width="70%" style="text-align: center">
+                <caption>作品列表</caption>
+                <tr>
+                    <th>id</th>
+                    <th>图片</th>
+                    <th>标题</th>
+                    <th>作者</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for="p in p_arr">
+                    <td>{{p.id}}</td>
+                    <td><img :src="p.url" width="50" height="40" alt=""></td>
+                    <td>{{p.title}}</td>
+                    <td>{{p.author}}</td>
+                    <td><a href="#" @click="del(p.id)">删除</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<!--引入jQuery框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--引入axios框架-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--引入Vue框架-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let header_vm = new Vue({
+        el:"header",
+        data:{
+            user:{}
+        },
+        created:function () {
+            //发请求得到当前登录的用户对象
+            axios.get("/currentuser").then(function (response) {
+                //代表没有登录
+                if (response.data==""){
+                    alert("请先登录!");
+                    location.href="/login.html";
+                }
+                header_vm.user = response.data;
+            })
+        },
+        methods: {
+            logout:function () {
+                if (!confirm("您确认退出登录吗?")){
+                    return;
+                }
+                //发出退出登录请求
+                axios.get("/logout").then(function () {
+                    //显示到首页
+                    location.href="/index.html";
+                })
+            }
+        }
+    })
+
+    //创建管理section主体区域的vue对象
+    let section_vm = new Vue({
+        el:"section",
+        data:{
+            p_arr:[]  //作品数组
+        },
+        created:function () {
+            //请求所有轮播图
+            axios.get("/product/select").then(function (response) {
+                section_vm.p_arr = response.data;
+            })
+        },
+        methods: {
+            del:function (id) {
+                if (!confirm("您确认删除吗?")){
+                    return;
+                }
+                axios.get("/product/delete?id="+id).then(function (response) {
+                    location.reload();
+                })
+            },
+            add:function () {
+                let name = prompt("请输入分类名称");
+                //如果点击取消 得到的name为null
+                if (name==null){
+                    return;
+                }
+                //发出添加分类的请求
+                axios.get("/category/add?name="+name).then(function (response) {
+                    location.reload();//刷新页面
+                })
+            },
+            upload:function () {
+                //得到form表单数据
+                let data = new FormData(document.querySelector("form"));
+                //发出上传请求
+                axios.post("/banner/add",data).then(function (response) {
+                    alert("发布完成!");
+                    location.reload();//刷新页面
+                })
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

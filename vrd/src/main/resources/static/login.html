@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>登录页面</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            background-color: #2e2e2e;
+            color: white;
+        }
+
+        .row h1 {
+            color: #ffc600;
+        }
+
+        .control-label {
+            color: black;
+        }
+
+        #heading {
+            background-color: black;
+            color: #ffc600;
+        }
+
+        .panel-default {
+            border-color: #ffc600;
+        }
+
+        input[type='checkbox'] {
+            position: relative;
+            top: 7px;
+            left: -10px;
+        }
+    </style>
+</head>
+<body>
+<!--登录页标题-->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>
+                    <small>欢迎使用</small> <b>VRD</b>作品展示系统
+                </h1>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <!--登录面板-->
+            <div class="panel panel-default">
+                <!--面板标题-->
+                <div class="panel-heading" id="heading">
+                    <h2 class="panel-title">登录</h2>
+                </div>
+                <!--面板主体-->
+                <div class="panel-body">
+                    <!--登录表单-->
+                    <form id="myform" class="form-horizontal" role="form"
+                          action="loginaction" method="post">
+                        <!--用户名-->
+                        <div class="form-group">
+                            <label for="name" class="col-md-2 control-label">用户名</label>
+                            <div class="col-md-8">
+                                <input type="text" v-model="username"
+                                       class="form-control" id="name" name="username"
+                                       placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <!--密码-->
+                        <div class="form-group">
+                            <label for="pwd" class="col-md-2 control-label">密码</label>
+                            <div class="col-md-8">
+                                <input type="password" v-model="password"
+                                       class="form-control" id="pwd" name="password"
+                                       placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd" class="col-md-3 control-label">记住用户名和密码</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="rem">
+                            </div>
+                        </div>
+                        <!--登录按钮-->
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="button" class="btn btn-default sublogin" @click="login()">登录</button>
+                                <span></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--网页页脚-->
+<footer>
+    <div class="container">
+        <div class="text-center">
+            Copyright © 2018 Tedu.cn All Rights Reserved <br/>
+            京ICP备16053980号-5 <a target="_blank" href="http://www.tedu.cn/">达内时代科技集团有限公司</a>
+            版权所有
+        </div>
+    </div>
+</footer>
+</body>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<!--引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--引入axios框架-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el:"form",
+        data:{
+            username:"",
+            password:""
+        },
+        methods:{
+            login:function () {
+                //得到表单数据
+                let data = new FormData(document.querySelector("form"));
+                //发出登录请求
+                axios.post("/login",data).then(function (response) {
+                    if (response.data==1){
+                        alert("登录成功!");
+                        location.href="/admin.html";//显示到后台管理页面
+                    }else if(response.data==2){
+                        alert("密码错误!");
+                    }else{
+                        alert("管理员账号不存在!")
+                    }
+                })
+            }
+        }
+    })
+    //取出浏览器中通过cookie保存的用户名和密码
+    let cookie = document.cookie;
+    //username=admin; password=123456
+    let cookieArr = cookie.split(";");
+    //遍历每一个cookie
+    for (let c of cookieArr) {
+        //通过=分割得到name和value
+        let arr = c.split("=");let name = arr[0];let value = arr[1];
+        if (name.trim()=="username"){
+            console.log("用户名="+value);
+            vm.username = value;
+        }
+        if (name.trim()=="password"){
+            console.log("密码="+value);
+            vm.password=value;
+        }
+    }
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

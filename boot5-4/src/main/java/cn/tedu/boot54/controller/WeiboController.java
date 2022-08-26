@@ -21,7 +21,7 @@ public class WeiboController {
     WeiboMapper weiboMapper;
 
     @RequestMapping("/send")
-    public void send(Weibo weibo, MultipartFile file, HttpSession session) throws IOException {
+    public void send(Weibo weibo, HttpSession session, MultipartFile file) throws IOException {
         User user = (User) session.getAttribute("user");
         if (user == null) {
             return;
@@ -34,13 +34,12 @@ public class WeiboController {
         if (!dirFile.exists()) {
             dirFile.mkdirs();
         }
-
         String filePath = dirPath + "/" + fileName;
         file.transferTo(new File(filePath));
+        weibo.setId(user.getId());
         weibo.setAuthor(user.getNick());
         weibo.setCreated(new Date());
         weibo.setUrl(fileName);
-        weibo.setUserid(user.getId());
         weiboMapper.insertWeibo(weibo);
     }
 
