@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="736b7946-ccca-4700-a6a4-e8cf3d3b5460" name="变更" comment="vsd">
+    <list default="true" id="736b7946-ccca-4700-a6a4-e8cf3d3b5460" name="变更" comment="修改了pom文件问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vrd/src/main/java/cn/tedu/vrd/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vrd/src/main/java/cn/tedu/vrd/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,6 +313,8 @@
       <workItem from="1661492512382" duration="4691000" />
       <workItem from="1661500023225" duration="104000" />
       <workItem from="1661500136845" duration="3781000" />
+      <workItem from="1661695889858" duration="944000" />
+      <workItem from="1661696849581" duration="820000" />
     </task>
     <task id="LOCAL-00001" summary="变更">
       <created>1661246788276</created>

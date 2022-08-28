@@ -47,4 +47,16 @@ public class UserController {
         return user == null ? false : true;
     }
 
+    @RequestMapping("/currentuser")
+    public User currentUser(HttpSession session) {
+        //去除登陆时保存的User
+        User user = (User) session.getAttribute("user");
+        return user;
+    }
+
+    @RequestMapping("/logout")
+    public void logout(HttpSession session) {
+        //从session中删除user;
+        session.removeAttribute("user");
+    }
 }
